@@ -19,7 +19,7 @@ import socket
 def filtering(folder_name):
     print("ㅡ 필터링 시작 ㅡ")
     filtered_count = 0
-    dir_name = "D:/졸프/Data_Analysis/data_crawling/" +folder_name
+    dir_name = "D:/졸프/data_crawling/" +folder_name
     for index, file_name in enumerate(os.listdir(dir_name)):
         try:
             file_path = dir_name+ str(filtered_count) + ".jpg"
@@ -38,13 +38,8 @@ def filtering(folder_name):
                 crop_image.save(dir_name+ str(filtered_count) + "_.jpg")
                 print(f"{index} 번째 사진 변환 후 사이즈 ({img.width},{img.height})->({crop_image.width},{crop_image.height})")
 
-        except FileNotFoundError:
+        except :
             pass
-
-        # 이미지 파일이 깨져있는 경우
-        except OSError:
-            os.remove(file_path)
-            print(f"{index} 번째 사진 삭제 => OSError")
         
         
         

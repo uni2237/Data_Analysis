@@ -37,7 +37,7 @@ def search_selenium(search_name,search_limit,folder_name):
             image.click()
             time.sleep(2)
             imgUrl = driver.find_element_by_xpath('/html/body/div[2]/c-wiz/div[3]/div[2]/div[3]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div/div[2]/a/img').get_attribute("src")
-            urllib.request.urlretrieve(imgUrl, "D:/졸프/Data_Analysis/data_crawling/" +folder_name+ str(count) + ".jpg")
+            urllib.request.urlretrieve(imgUrl, "D:/졸프/data_crawling/" +folder_name+ str(count) + ".jpg")
             count = count + 1
         except:
             pass
@@ -47,7 +47,7 @@ def search_selenium(search_name,search_limit,folder_name):
 
 if __name__ == "__main__" :
     
-    #search_selenium("꿀꽈배기",100, "봉지과자/꿀꽈배기/")
+    search_selenium("꿀꽈배기",100, "봉지과자/꿀꽈배기/")
     #search_selenium("새우깡", 100, "봉지과자/새우깡/")
     #search_selenium("오감자 그라탕",  100, "봉지과자/오감자/")
     #search_selenium("포스틱",  100, "봉지과자/포스틱/")
@@ -78,7 +78,7 @@ if __name__ == "__main__" :
     #search_selenium("웰치스 포도 페트",  50, "페트병/웰치스/")
     #search_selenium("웰치스 포도 1.5",  50, "페트병/웰치스/")
     #search_selenium("칠성사이다 페트",  100, "페트병/칠성사이다/")
-    search_selenium("코카콜라 페트", 100, "페트병/코카콜라/")
+    #search_selenium("코카콜라 페트", 100, "페트병/코카콜라/")
 
     
     print("크롤링 전체 끝!")
